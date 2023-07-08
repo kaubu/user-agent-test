@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User-Agent Spoof Test</title>
+  <script>
+    const chrome_data = 0;
+    const firefox_data = 0;
+
+    // if 100 points of identifying information, _small = 0.01
+    const chrome_small = 1 / chrome_data; 
+    const firefox_small = 1 / firefox_data;
+
+    // percentage
+    // if 100 points of identifying information, _percentage = 1
+    const chrome_percentage = chrome_small * 100;
+    const firefox_percentage = firefox_small * 100;
+
+    const user_agent = window.navigator.userAgent;
+
+    // Make a new request to get the headers
+    var req = new XMLHttpRequest();
+    req.open('GET', document.location, false);
+    req.send(null);
+    var headers = req.getAllResponseHeaders();//.toLowerCase();
+    console.log(headers);
+  </script>
+</head>
+<body>
+  <h1>User-Agent Spoof Test</h1>
+  <h2>Results:</h2>
+  <ul>
+    <li></li>
+  </ul>
+</body>
+</html>
